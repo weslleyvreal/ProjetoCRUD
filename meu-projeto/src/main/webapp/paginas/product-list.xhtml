@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Página de Produto</title>
+</h:head>
+<h:body>
+	<p:panel header="Lista de Produtos">
+		<h:form id="formList">
+			<h:panelGrid columns="2">
+				<p:dataTable value="#{productBean.products}" var="p" border="2"
+					id="tabelaProdutos">
+					<p:column headerText="Nome">#{p.name}</p:column>
+					<p:column headerText="Imagem">#{p.image}</p:column>
+					<p:column headerText="Descrição">#{p.description}</p:column>
+					<p:column width="85">
+						<p:button value="Editar" icon="pi pi-pencil" outcome="/paginas/update-product.xhtml?id=#{p.id}" />
+					</p:column>
+					<p:column width="85">
+						<p:button value="Exluir" icon="pi pi-pencil" outcome="/paginas/product-list.xhtml">
+							<f:param name="id" value="#{p.id}" />
+							<f:param name="param" value="del" />
+						</p:button>						
+					</p:column>
+				</p:dataTable>
+			</h:panelGrid>
+			<p:panelGrid columns="3">
+				<p:column></p:column>
+				<p:column></p:column>
+				<p:column>
+					<p:button value="Adicionar Produto" icon="pi pi-check"
+						outcome="/paginas/product-form.xhtml" style="float:right;" />
+				</p:column>
+			</p:panelGrid>			
+		</h:form>
+	</p:panel>
+
+</h:body>
+</html>

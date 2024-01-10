@@ -1,0 +1,7 @@
+br/com/dominio/utils/LoginUtil.class
+br/com/dominio/model/Pessoa.class
+br/com/dominio/phaselistener/LoginPhaseListener.class
+br/com/dominio/beans/LoginBean.class
+br/com/dominio/dao/UsuarioDAO.class
+br/com/dominio/controller/PessoaMB.class
+br/com/dominio/model/Usuario.class
